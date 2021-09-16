@@ -8,37 +8,16 @@ public class UserRegistrationTestCases {
     UserRegistration userRegistration = new UserRegistration();
 
     @Test
-    public void whenGivenLasttNameWith1stCapitalLetter_shouldReturnTrue() {
+    public void whenGivenEmailWithSpecialCharactersAtProperPlaces_shouldReturnTrue() {
 
-        boolean validationStatus = userRegistration.validateLastName("Chaudhari");
+        boolean validationStatus = userRegistration.validateEmail("chaudharitoshita@gmail.com");
         Assert.assertEquals(true, validationStatus);
     }
 
     @Test
-    public void whenGivenLastNameWith1stLetterNotCapital_shouldReturnFalse() {
-
-        boolean validationStatus = userRegistration.validateLastName("chaudhari");
+    public void whenGivenEmailWithSpecialCharactersNotAtProperPlaces_shouldReturnFalse() {
+        boolean validationStatus = userRegistration.validateEmail("chaudhari123gmailcom");
         Assert.assertEquals(false, validationStatus);
     }
 
-    @Test
-    public void whenGivenLastNameContainNumericValue_shouldReturnFalse() {
-
-        boolean validationStatus = userRegistration.validateLastName("Chaudhari17");
-        Assert.assertEquals(false, validationStatus);
-    }
-
-    @Test
-    public void whenGivenLastNameContainSpecialCharacter_shouldReturnFalse() {
-
-        boolean validationStatus = userRegistration.validateLastName("Chaudhari@17");
-        Assert.assertEquals(false, validationStatus);
-    }
-
-    @Test
-    public void whenGivenLastNameIsLessThan3Characters_shouldReturnFalse() {
-
-        boolean validationStatus = userRegistration.validateLastName("Ch");
-        Assert.assertEquals(false, validationStatus);
-    }
 }

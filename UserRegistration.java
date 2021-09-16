@@ -5,17 +5,16 @@ import java.util.regex.Pattern;
 
 public class UserRegistration {
 
-    public boolean validateLastName(String lastName) {
-        String regex = "^[A-Z]{1}[a-zA-Z]{2,20}";
+    public boolean validateEmail(String Email) {
+        String regex = "^[a-zA-Z0-9+_.]+@[a-zA-Z.-]+$";
         Pattern pattern = Pattern.compile(regex);
-        Matcher matcher = pattern.matcher(lastName);
+        Matcher matcher = pattern.matcher(Email);
 
         if (matcher.matches()) {
-            System.out.println("Valid LastName");
+            System.out.println("Valid Email");
 
         } else {
-            System.out.println("Invalid LastName....!");
-            System.out.println("Your Lastname should start with capital letter and has minimum 3 characters ");
+            System.out.println("Invalid Email....!");
         }
         return false;
     }
