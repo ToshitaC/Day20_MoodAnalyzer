@@ -8,37 +8,37 @@ public class UserRegistrationTestCases {
     UserRegistration userRegistration = new UserRegistration();
 
     @Test
-    public void whenGivenFirstNameWith1stCapitalLetter_shouldReturnTrue() {
+    public void whenGivenLasttNameWith1stCapitalLetter_shouldReturnTrue() {
 
-        boolean validationStatus = userRegistration.validateFirstName("Toshita");
+        boolean validationStatus = userRegistration.validateLastName("Chaudhari");
         Assert.assertEquals(true, validationStatus);
     }
 
     @Test
-    public void whenGivenFirstNameWith1stLetterNotCapital_shouldReturnFalse() {
+    public void whenGivenLastNameWith1stLetterNotCapital_shouldReturnFalse() {
 
-        boolean validationStatus = userRegistration.validateFirstName("toshita");
+        boolean validationStatus = userRegistration.validateLastName("chaudhari");
         Assert.assertEquals(false, validationStatus);
     }
 
     @Test
-    public void whenGivenFirstNameContainNumericValue_shouldReturnFalse() {
+    public void whenGivenLastNameContainNumericValue_shouldReturnFalse() {
 
-        boolean validationStatus = userRegistration.validateFirstName("Toshita17");
+        boolean validationStatus = userRegistration.validateLastName("Chaudhari17");
         Assert.assertEquals(false, validationStatus);
     }
 
     @Test
-    public void whenGivenFirstNameContainSpecialCharacter_shouldReturnFalse() {
+    public void whenGivenLastNameContainSpecialCharacter_shouldReturnFalse() {
 
-        boolean validationStatus = userRegistration.validateFirstName("Toshita@17");
+        boolean validationStatus = userRegistration.validateLastName("Chaudhari@17");
         Assert.assertEquals(false, validationStatus);
     }
 
     @Test
-    public void whenGivenFirstNameIsLessThan3Characters_shouldReturnFalse() {
+    public void whenGivenLastNameIsLessThan3Characters_shouldReturnFalse() {
 
-        boolean validationStatus = userRegistration.validateFirstName("To");
+        boolean validationStatus = userRegistration.validateLastName("Ch");
         Assert.assertEquals(false, validationStatus);
     }
 }

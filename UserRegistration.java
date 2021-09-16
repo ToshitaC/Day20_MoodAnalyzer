@@ -5,22 +5,18 @@ import java.util.regex.Pattern;
 
 public class UserRegistration {
 
-    public boolean validateFirstName(String firstName) {
-
-        String Toshita;
-
-        String regex = "^[A-Z]{1}[a-z]{2,}$";
+    public boolean validateLastName(String lastName) {
+        String regex = "^[A-Z]{1}[a-zA-Z]{2,20}";
         Pattern pattern = Pattern.compile(regex);
-        Matcher matcher = pattern.matcher(firstName);
+        Matcher matcher = pattern.matcher(lastName);
 
         if (matcher.matches()) {
-            System.out.println("Valid Firstname");
+            System.out.println("Valid LastName");
 
         } else {
-            System.out.println("Invalid Firstname....!");
-            System.out.println("Your Firstname should start with capital letter and has minimum 3 characters ");
+            System.out.println("Invalid LastName....!");
+            System.out.println("Your Lastname should start with capital letter and has minimum 3 characters ");
         }
         return false;
-
     }
 }
